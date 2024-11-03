@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SinMachismo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="phone-frame">
+        <div class="screen">
+            <!-- Pantalla de Inicio -->
+            <section id="inicio" class="pantalla">
+                <h1>SinMachismo</h1>
+                <p>Descubre tus niveles de machismo y recibe recomendaciones.</p>
+                <button onclick="showScreen('trivia')">Comenzar Trivia</button>
+                <button onclick="showScreen('instrucciones')">Instrucciones</button>
+            </section>
+
+            <!-- Pantalla de Instrucciones -->
+            <section id="instrucciones" class="pantalla" style="display: none;">
+                <h1>Instrucciones</h1>
+                <p>Responde las preguntas de manera honesta. Al final, recibirás un resultado que indicará si tienes actitudes igualitarias o machistas, con recomendaciones.</p>
+                <p><strong>Interpretación de resultados:</strong></p>
+                <ul>
+                    <li>Si tu puntaje es 0-5, tienes una mentalidad igualitaria.</li>
+                    <li>Si tu puntaje es 6-14, tienes algunas actitudes machistas.</li>
+                    <li>Si tu puntaje es 15-20, posees una mentalidad predominantemente machista.</li>
+                </ul>
+                <p><strong>Nota:</strong> Algunas preguntas tienen un mayor peso en el puntaje final que otras, lo que significa que algunas respuestas pueden influir más en tu resultado.
+                <p >Las preguntas están diseñadas para reflejar actitudes que pueden ser dirigidas a cualquier género, reconociendo que tanto hombres como mujeres pueden verse afectados por el machismo.</p>
+                <button onclick="showScreen('inicio')">Volver al Inicio</button>
+            </section>
+
+            <!-- Pantalla de Trivia -->
+            <section id="trivia" class="pantalla" style="display: none;">
+                <h1>Pregunta <span id="preguntaNumero">1</span>/10</h1>
+                <p id="preguntaTexto">Pregunta aquí</p>
+                <button onclick="responder(0)" id="opcion1">Respuesta 1</button>
+                <button onclick="responder(1)" id="opcion2">Respuesta 2</button>
+                <button onclick="responder(2)" id="opcion3">Respuesta 3</button>
+            </section>
+
+            <!-- Pantalla de Resultados -->
+            <section id="resultados" class="pantalla" style="display: none;">
+                <h1>Resultado</h1>
+                <p id="resultadoTexto"></p>
+                <button onclick="reiniciar()">Reiniciar Trivia</button>
+                <button onclick="showScreen('inicio')">Volver al Inicio</button>
+            </section>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
